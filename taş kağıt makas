@@ -1,0 +1,202 @@
+import random
+import time
+game = ["Taş","Kağıt","Makas"]
+while True:
+    print("Taş Kağıt Makasa Hoşgeldin")
+    time.sleep(1)
+    sec = input("Hangi oyun modunu istersin\nBilgisayarların Savaşı/Kolay/Normal/İmkansız/İhtimaller\n(İlk harflerini yazın. İhtimaller için İH yazmalısınız.)\nProgramı kapatmak için q'ya basınız\n")
+    if sec == "N":
+        a = True
+        w = 0
+        de = 0
+        d = 0
+        print("Oyun başladı\nÇıkmak için q yazın\ntaş, kağıt ve makas yazarak oynayabilirsiniz")
+        while a == True:
+            b = input("")
+            c = (random.choice(game))
+            if b == "taş" and c == "Makas":
+                print (c)
+                print ("Kazandın")
+                w = w + 1
+            elif b == "taş" and c == "Taş":
+                print (c)
+                print ("Berabere")
+                d = d + 1
+            elif b == "taş" and c == "Kağıt":
+                print (c)
+                print("Kayıp ettin")
+                de = de + 1
+            elif b == "kağıt" and c == "Taş":
+                print (c)
+                print ("Kazandın")
+                w = w + 1
+            elif b == "kağıt" and c == "Kağıt":
+                print (c)
+                print ("Berabere")
+                d = d + 1
+            elif b == "kağıt" and c == "Makas":
+                print (c)
+                print("Kayıp ettin")
+                de = de + 1
+            elif b == "makas" and c == "Kağıt":
+                print (c)
+                print ("Kazandın")
+                w = w + 1
+            elif b == "makas" and c == "Makas":
+                print (c)
+                print ("Berabere")
+                d = d + 1
+            elif b == "makas" and c == "Taş":
+                print (c)
+                print("Kayıp ettin")
+                de = de + 1
+            elif b == "q":
+                print(f"{w} kere kazandın\n{d} kere berabere kaldın\n{de} kere kaybettin")
+                time.sleep(1)
+                w = 0
+                de = 0
+                d = 0
+                break
+            else:
+                print("Yazım Hatası\nBaş Harf")
+    elif sec == "BS":
+        bw = 0
+        bde = 0
+        bd = 0
+        print("Bu oyun modunda iki tane bilgisayar taş kağıt makas oynayacaktır.\nDevam etmeleri için enter'a basmanız gerekmektedir\nÇıkmak ve sonucu görmek için q'ya basınız")
+        savas = True
+        while savas == True:
+            enter = input("")
+            if enter ==  "q":
+                print(f"A Bot {bw} kere kazandı\n{bd} kere berabere kaldılar\nB Bot {bde} kere kazandı")
+                time.sleep(1)
+                bw = 0
+                bde = 0
+                bd = 0
+                break
+            ab = (random.choice(game))
+            bb = (random.choice(game))
+            print (f"A BOT : {ab}")
+            print (f"B BOT : {bb}\n")
+            if ab == "Taş" and bb == "Makas":
+                print ("A Bot Kazandı")
+                bw = bw + 1
+            if ab == "Taş" and bb == "Taş":
+                print ("Berabere")
+                bd = bd + 1
+            if ab == "Taş" and bb == "Kağıt":
+                print("B Bot Kazandı")
+                bde = bde + 1
+            if ab == "Kağıt" and bb == "Taş":
+                print ("A Bot Kazandı")
+                bw = bw + 1
+            if ab == "Kağıt" and bb == "Kağıt":
+                print ("Berabere")
+                bd = bd + 1
+            if ab == "Kağıt" and bb == "Makas":
+                print("B Bot Kazandı")
+                bde = bde + 1
+            if ab == "Makas" and bb == "Kağıt":
+                print ("A Bot Kazandı")
+                bw = bw + 1
+            if ab == "Makas" and bb == "Makas":
+                print ("Berabere")
+                bd = bd + 1
+            if ab == "Makas" and bb == "Taş":
+                print("B Bot Kazandı")
+                bde = bde + 1
+    elif sec == "q":
+        print("Görüşürüz")
+        break
+    elif sec == "K":
+        print("Oyun başladı\nÇıkmak için q yazın\ntaş, kağıt ve makas yazarak oynayabilirsiniz")
+        Kolay = True
+        easy = 0
+        while Kolay == True:
+            ez = input("")
+            if ez == "taş":
+                print("Makas")
+                print("Kazandın")
+                easy = easy + 1
+            if ez == "kağıt":
+                print("Taş")
+                print("Kazandın")
+                easy = easy + 1
+            if ez == "makas":
+                print("Kağıt")
+                print("Kazandın")
+                easy = easy + 1
+            if ez == "q":
+                print(f"{easy} kere kazandın. 0 kere berabere kaldın. 0 kere yenildin.")
+                time.sleep(1)
+                easy = 0
+                break
+    elif sec == "İ":
+        print("Oyun başladı\nÇıkmak için q yazın\ntaş, kağıt ve makas yazarak oynayabilirsiniz")
+        çokzor = True
+        zor = 0
+        while çokzor == True:
+            g = input("")
+            if g == "taş":
+                print("Kağıt")
+                print("Kaybettin")
+                zor = zor + 1
+            if g == "kağıt":
+                print("Makas")
+                print("Kaybettin")
+                zor = zor + 1
+            if g == "makas":
+                print("Taş")
+                print("Kaybettin")
+                zor = zor + 1
+            if g == "füze":
+                print ("HAHAHAHA Bunun bu kadar kolay olacağınımı sandın?\nKara Delik")
+                zor = zor + 1
+                print(f"0 kere kazandın. 0 kere berabere kaldın. {zor} kere yenildin.")
+                time.sleep(1)
+                zor = 0
+                break 
+            if g == "q":
+                print(f"0 kere kazandın. 0 kere berabere kaldın. {zor} kere yenildin.")
+                time.sleep(1)
+                zor = 0
+                break
+    elif sec == "İH":
+        iw = 0
+        idr = 0
+        ide = 0
+        print ("Bu oyun modunda iki bilgisayar sizin yazacağınız bir sayı kadar taş kağıt makas oynayacaktır ve oyunlarının sonuçları size gelecektir.")
+        sans = True
+        while sans == True:
+            sayı = int(input("Bilgisayarların kaç oyun oynamasını istersiniz:\n"))
+            for i in range (sayı):
+                gg = (random.choice(game))
+                bg = (random.choice(game))
+                if gg == "Taş" and bg == "Makas": 
+                    iw = iw + 1
+                if gg == "Taş" and bg == "Taş":
+                    idr = idr + 1
+                if gg == "Taş" and bg == "Kağıt":
+                    ide = ide + 1
+                if gg == "Kağıt" and bg == "Taş":
+                    iw = iw + 1
+                if gg == "Kağıt" and bg == "Kağıt":
+                    idr = idr + 1
+                if gg == "Kağıt" and bg == "Makas":
+                    ide = ide + 1
+                if gg == "Makas" and bg == "Kağıt":
+                    iw = iw + 1
+                if gg == "Makas" and bg == "Makas":
+                    idr = idr + 1
+                if gg == "Makas" and bg == "Taş":
+                    ide = ide + 1
+            print (f"1. bilgisayar {iw} kere kazandı\n{idr} kere berabere kaldılar\n2. bilgisayar {ide} kere kazandı")
+            iw = 0
+            idr = 0
+            ide = 0
+            sonla = input("Çıkmak için q'ya, devam etmek için Enter'a basınız")
+            if sonla == "q":
+                break
+    else:
+        print("Yazım Hatası\nOyun modlarının baş harfleri ile yazmalısın.\nNormal = N\nBilgisayarların Savaşı = BS\nKolay = K\nİmkansız = İ\nİhtimaller = İH\n")
+       
